@@ -1,0 +1,56 @@
+#mainContent{
+    height: 500px;
+}
+.d1{
+    background-color: rgb(255, 203, 203);
+    width:50%; 
+    padding: 15px;
+    list-style-type: none;
+    text-align: center;
+    margin: 150px 150px 25px 5%;
+     /* display: justify; */
+     /* display: flex; */
+    z-index:2;
+}
+.d2{
+    background-color: rgb(137, 137, 235);
+    width: 50%;
+    padding: 15px;
+    list-style-type: none;
+    margin: 25px 150px 25px 15%;
+    text-align: center;
+    z-index:4;
+}
+.d3{
+    background-color: rgb(216, 184, 102);
+    width:65%;
+    padding: 15px;
+    list-style-type: none;
+    text-align: center;
+    margin: 25px 150px 50px 25%;
+    z-index: 6;
+
+}
+.d1 a, .d2 a, .d3 a{
+    color: black;
+}
+
+.d1 a:hover, .d2 a:hover, .d3 a:hover{
+    color: white;
+}
+
+.video-1{
+    /*
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: static;
+    z-index: -1;
+    */
+    position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -1;
+}

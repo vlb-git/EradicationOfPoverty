@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Page Editor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <style>
+            body{
+                align-items: center;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                color: antiquewhite;
+                background-image: -webkit-linear-gradient(#9900ff,#5bc703);
+                
+            }
+            #content{
+                background-color: #bf1dff;
+                text-align: center;
+                width:60%;
+                position: relative;
+                margin: auto;
+                padding: 10px;
+                border-radius: 18px;
+            }
+            #mainTitle{
+                align-content: center;
+                margin:auto;
+
+            }
+            .editorPara{
+                width:80%;
+                margin: auto;
+            }
+
+            .linkButton{
+                font-family: Arial, sans-serif;
+                width: 80%;
+                height: 40px;
+                border-radius: 10px;
+                border:none;
+                background-color: rgb(27, 255, 27);
+                color: black;
+                font-weight: bold;
+                font-size:20px;
+                transition-duration: 0.25s;
+                margin:auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .linkButton:hover{
+                background-color: rgb(47, 165, 0);
+
+                color: white;
+                text-shadow: 0px 0px 9px rgb(255, 255, 255);
+            }
+
+            .linkButton:active{
+                background-color: white;
+                color: black;
+
+            }
+            p {
+                line-height: 1.6;
+                font-size: 18px;
+            }
+            h2{
+                color:rgb(0, 0, 0);
+                font-family: Arial, sans-serif;
+                font-size: 25px;
+                width: 60%;
+                margin: auto;
+                text-align: center;
+            }
+            h1{
+                font-size: 50px;
+                font-family:'Segoe UI';
+            }
+
+            a{
+                text-decoration: none;
+            }
+
+            ::selection{
+                background-color: rgb(20, 252, 32);
+                color:black;
+            }
+
+            #contentLinkButton{
+                font-size: 18px;
+            }
+
+            @media only screen and (max-width: 600px) {
+            
+            #content {
+                width: 100%;
+                margin: 0px;
+            }
+            }
+
+            @media only screen and (max-width: 1293px) {
+            
+            #contentLinkButton {
+                height:50px;
+            }
+            }
+
+            @media only screen and (max-width: 725px) {
+            
+            #contentLinkButton {
+                height:80px;
+            }
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 id="mainTitle">Page Editor</h1>
+        <hr>
+        <p>
+            Name: Vethum Buthgamuwa<br>
+            Role: Student 3<br>
+            The following pages were edited by me!
+        </p>
+        <hr>
+        <div id="content">
+            <h2>Profile</h2>
+            <br>
+            <p class="editorPara">I Created the profile page that collects the users information using prompts in javascript.</p>
+            <br>
+            <a href="profile.html" target="_blank"><div class="linkButton" id="profileLinkButton">The profile page</div></a>
+            <br><br><br>
+
+            <h2>Team</h2>
+            <br>
+            <p class="editorPara">I Created the team page which displays information about the team members, including their names and team roles. Information of the specific student appears when users cursor hovers over the image of the student.</p>
+            <br>
+            <a href="team.html" target="_blank"><div class="linkButton" id="teamLinkButton">The team page</div></a>
+            <br><br><br>
+
+            <h2>History of poverty eradication by the United Nations</h2>
+            <br>
+            <p class="editorPara">I Created content page that describes the three "Decated of poverty eradication by the United Nations" and their impact.</p>
+            <br>
+            <a href="vethum_content.html" target="_blank"><div class="linkButton" id="contentLinkButton">The History of poverty eradication by the United Nations page</div></a>
+            <br><br>
+        </div>
+    </body>
+</html>

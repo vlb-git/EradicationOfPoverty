@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Team members</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            html{
+                scroll-behavior: smooth;
+            }
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: white;
+            }
+            
+            .pageTitle{
+                text-align: center;
+            }
+            .studentDetails{
+                border-style: solid;
+                border-color: black;
+                display: inline-flex;
+                width:300px;
+                border-radius: 10px;
+                padding: 0px;
+                margin: 10px;
+                background-color: darkgray;
+            }
+            .studentDetails:hover{
+                height:500px;
+
+            }
+            .studentImage{
+                width:100%;
+                padding: 0px;
+                border-radius: 10px;
+            }
+            .studentInfo{
+                width:100%;
+                padding: 0;
+                /*background-color: aqua;*/
+                display: none;
+            }
+            .studentName{
+                text-align: center;
+                font-weight: bold;
+            }
+            
+            #student1:hover #student1Info{
+                display:block;
+            }
+            #student1:hover #student1Image{
+                filter: brightness(50%);
+                transform: none;
+            }
+
+
+            #student2:hover #student2Info{
+                display:block;
+            }
+            #student2:hover #student2Image{
+                filter: brightness(50%);
+                transform: none;
+            }
+
+
+            #student3:hover #student3Info{
+                display:block;
+            }
+            #student3:hover #student3Image{
+                filter: brightness(50%);
+                transform: none;
+            }
+            #mainContainer{
+                height:800px;
+            }
+            /*******************************/
+            /*
+            .navbar{
+                background-color:grey;
+            }*/
+            
+
+        </style>
+    </head>
+    <body>
+
+        <!-- Nav Bar -->
+        <div class="navbar">
+            <span class="logo"><img src="img/logo.jpg" alt=""></span>
+            <ul class="nav-link">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li id="active"><a href="team.html">Team</a></li>
+                <li><a href="Contentmain.html">Content</a></li>
+                <li><a href="Feedback.html">Feedback</a></li>
+            </ul>  
+        </div>
+        <!-- Nav Bar -->
+
+        <h1 class="pageTitle">Student Details</h1>
+        <h4 class="pageTitle">About Us - Hover over the image for details!</h4>
+        <div id="mainContainer">
+        <div class="studentDetails" id="student1">
+            <table>
+                <tr><td>
+                    <img src="img/Ravinda.jpg" alt="student 1" class="studentImage" id="student1Image">
+                </td></tr>
+                <tr><td>
+                    <div class="studentInfo" id="student1Info">
+                        <p class="studentName">Ravinda Duljaya</p>
+                        <p> Role: Student 1<br>
+                            Designed and implemented pages:<br>
+                            Splash Screen | Shop
+                        </p>
+                    </div>
+                </td></tr>
+            </table>
+        </div>
+
+        <div class="studentDetails" id="student2">
+            <table>
+                <tr><td>
+                    <img src="img/Manuljee.jpg" alt="student 2" class="studentImage" id="student2Image">
+                </td></tr>
+                <tr><td>
+                    <div class="studentInfo" id="student2Info">
+                        <p class="studentName">Manuljee Dassanayaka</p>
+                        <p> Role: Student 2<br>
+                            Designed and implemented pages:<br>
+                            Home Page | Feedback
+                        </p>
+                    </div>
+                </td></tr>
+            </table>
+        </div>
+
+        <div class="studentDetails" id="student3">
+            <table>
+                <tr><td>
+                    <img src="img/vethum.jpg" alt="student 3" class="studentImage" id="student3Image">
+                </td></tr>
+                <tr><td>
+                    <div class="studentInfo" id="student3Info">
+                        <p class="studentName">Vethum Buthgamuwa</p>
+                        <p> Role: Student 3<br>
+                            Designed and implemented pages:<br>
+                            User Profile | Team
+                    </p>
+                    </div>
+                </td></tr>
+            </table>
+        </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer">
+            <ul>
+                <li><a href="vethum_editor.html" target="_blank">Vethum's editor page</a></li>
+                <li><a href="ravinda_editor.html" target="_blank">Ravindas's editor page</a></li>
+                <li><a href="manuljee_editor.html" target="_blank">Manuljees's editor page</a></li>
+            </ul>
+        </div>
+        <!-- footer -->
+
+    </body>
+</html>

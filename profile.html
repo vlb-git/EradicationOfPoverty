@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Profile</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                background-color: rgb(255, 255, 255);
+            }
+            #inputInfo{
+                background-color: rgb(201, 201, 201);
+                border-radius: 8px;
+                padding: 5px;
+                width:100%;
+            }
+            .response{
+                font-weight: bold;
+            }
+            #startButton{
+                /*background-color: rgb(54, 230, 253);*/
+                background-color: #2f90ff;
+                color:white;
+                border-radius: 18px;
+                padding: 7px;
+                width:150px;
+                height: 50px;
+                border:none;
+                font-size: 20px;
+                transition: 0.25s;
+            }
+            #startButton:hover{
+                /*background-color: rgb(145, 251, 255);*/
+                background-color: #9bdaff;
+                color:black;
+            }
+            .infoBox{
+                background-color: rgb(201, 201, 201);
+                border-radius: 8px;
+                padding: 5px;
+                text-align: center;
+                margin:auto;
+                width:80%;
+                display:none;
+                font-size: 18px;
+            }
+            .infoBox table{
+                text-align: left;
+            }
+            #personalInfo{
+                display:block;
+            }
+            hr{
+                height:3px;
+                background-color: black;
+                width:100%;
+            }
+            #mainContent{
+                margin: 20px;
+                padding: 20px;
+                position:relative;
+                text-align: center;
+                margin:auto;
+                border-radius: 18px;
+                width: 60%;
+            }
+            
+            #answerProgress{
+                width:100%;
+                height: 30px;
+                background-color: green;
+                border-radius: 18px;
+
+            }
+
+            .qLabel:hover {
+                color:white;
+                cursor:pointer;
+            }
+
+            .sectionTitle:hover{
+                color:white;
+                cursor:pointer;
+
+            }
+
+            @media only screen and (max-width: 600px) {
+            
+            #mainContent {
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+            }
+            #inputInfo{
+                margin: 0px;
+                padding: 0px;
+            }
+            }
+
+        </style>
+        
+    </head>
+    <body>
+
+        <!-- Nav Bar -->
+        <div class="navbar">
+            <span class="logo"><img src="img/logo.jpg" alt=""></span>
+            <ul class="nav-link">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li id="active"><a href="profile.html">Profile</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="Contentmain.html">Content</a></li>
+                <li><a href="Feedback.html">Feedback</a></li>
+            </ul>  
+        </div>
+        <!-- Nav Bar -->
+
+
+        <h1>Build User Profile</h1>
+
+        <div id="mainContent">
+            <button onclick="runPrompts()" id="startButton">Start</button>
+            <br><br>
+            <span id="progressBarLabel">Profile Completed: 0%</span><br>
+            <progress id="answerProgress" value="0" max="13"></progress>
+            <br>
+            <div id="inputInfo">
+                
+                <div id="personalInfo" class="infoBox">
+                <h3 onclick="runPrompts(selectedStep=1);" class="sectionTitle">Personal Information</h3>
+                    <table>
+                        <tr onclick="editInfo(0)" class="qLabel"><td>First Name:</td> <td id="q1" class="response"></td></tr>
+
+                        <tr onclick="editInfo(1)" class="qLabel"><td>Last Name: </td> <td id="q2" class="response"></td></tr>
+
+                        <tr onclick="editInfo(2)" class="qLabel"><td>Gender: </td><td id="q3" class="response"></td></tr>
+
+                        <tr onclick="editInfo(3)" class="qLabel"><td>Age: </td><td id="q4" class="response"></td></tr>
+                    </table>
+                
+                </div>
+
+            
+
+            <div id="contactInfo" class="infoBox">
+                <hr>
+                <h3 onclick="runPrompts(selectedStep=2);" class="sectionTitle">Contact Information</h3>
+                    <table>
+                        <tr onclick="editInfo(4)" class="qLabel"><td>Email: </td><td id="q5" class="response"></td></tr>
+                        <tr onclick="editInfo(5)" class="qLabel"><td>Phone Number: </td><td id="q6" class="response"></td></tr>
+                        <tr onclick="editInfo(6)" class="qLabel"><td>Mailing Address: </td><td id="q7" class="response"></td></tr>
+                        <tr onclick="editInfo(7)" class="qLabel"><td>Country: </td><td id="q8" class="response"></td></tr>
+                    </table>
+            </div>
+            
+            
+
+            <div id="volunteeringTasks" class="infoBox">
+                <hr>
+                <h3 onclick="runPrompts(selectedStep=3);" class="sectionTitle">Volunteering Tasks</h3>
+                    <table>
+                        <tr onclick="editInfo(8)" class="qLabel"><td>Intrests in Volunteering: </td><td id="q9" class="response"></td></tr>
+                        <tr onclick="editInfo(9)" class="qLabel"><td>Previous volunteering: </td><td id="q10" class="response"></td></tr>
+                    </table>
+            </div>
+
+
+            <div id="educationalQualifications" class="infoBox">
+                <hr>
+                <h3 onclick="runPrompts(selectedStep=4);" class="sectionTitle">Educational Qualifications</h3>
+                    <table>
+                        <tr onclick="editInfo(10)" class="qLabel"><td>Area of study: </td><td id="q11" class="response"></td></tr>
+                        <tr onclick="editInfo(11)" class="qLabel"><td>Highest degree: </td><td id="q12" class="response"></td></tr>
+                        <tr onclick="editInfo(12)" class="qLabel"><td>University: </td><td id="q13" class="response"></td></tr>
+                    </table>
+            </div>
+            <br><br>
+            </div>
+            
+            
+        </div>
+        <script>
+            var questions = [
+                "Enter your First Name", 
+                "Enter your Last Name", 
+                "What is your Gender", 
+                "What is your Age", 
+                "Email", 
+                "Phone Number", 
+                "Mailing Address", 
+                "Country", 
+                "How would you like to Volunteer?", 
+                "What are your previous volunteering experiences?",
+                "Area of study",
+                "What is your highest educational qualification?",
+                "What is your university"];
+            
+            var answers = ["","","","","","","","","","","","",""];
+            var progress = 0;
+
+            var formStep=1;// keeps track of the current step number in the profile.
+
+            function returnQuestionInfo(i){
+                // returns the text for the prompt describing the step number and the question number
+                if (i<4){
+                        stepInfo="STEP 1 Personal Information | Question "+(i+1)+"/4";
+                        document.getElementById("personalInfo").style.display = "block";
+                        document.getElementById("contactInfo").style.display = "block";
+                    }
+                    else if (i>3 && i<8){
+                        stepInfo="STEP 2 Contact Information | Question "+(i+1-4)+"/4";
+                        document.getElementById("volunteeringTasks").style.display = "block";
+                    }
+                    else if (i>7 && i<10){
+                        stepInfo="STEP 3 Volunteering Tasks | Question "+(i+1-8)+"/2";
+                        document.getElementById("educationalQualifications").style.display = "block";
+                    }
+                    else{
+                        stepInfo="STEP 4 Educational Qualifications | Question "+(i+1-10)+"/3";
+                    }
+                    return stepInfo;
+            }
+            function editInfo(i){
+                // this function runs when the user clicks a detail on the display form.
+                let value = document.getElementById("q"+(i+1)).innerHTML
+                runPrompt(i,value=value);
+
+            }
+            function runPrompt(i,value=""){
+                // runs a single prompt
+                var answ="";
+
+                let stepInfo=returnQuestionInfo(i);
+
+                answ = prompt(stepInfo+"\n"+questions[i],value);
+                if (answ==null || answ==""){
+                    /* 
+                    if the user skips the question or leaves the question blank, 
+                    that question will not be consideted as answered.
+                    */
+                    return;
+                }
+                document.getElementById("q"+(i+1)).innerHTML=answ;
+                if(answers[i]==""){
+                    progress++;
+                }
+                answers[i]=answ;
+                
+                document.getElementById("answerProgress").value=""+progress;
+                document.getElementById("progressBarLabel").innerHTML="Profile Completed: "+Math.floor(progress/13*100)+"%";
+            }
+
+            function runPrompts(selectedStep=-1){
+                let step=0;
+                if (selectedStep==-1){
+                    /* 
+                    if selectedStep is set to the default value that means the user clicked the start button
+                    */
+                    step=formStep;
+                }
+                else{
+                    /*
+                    The user clicked the heading of the section.
+                    */
+                    step=selectedStep;
+                }
+                if (step==1){
+                    for(var i=0;i<=3;i++){
+                        runPrompt(i);
+                    }
+                    if (selectedStep==-1){// the form step updates only if the user clicked the start button.
+                        formStep++;
+                        document.getElementById("startButton").innerHTML="Start Step "+formStep;
+                    }
+                    
+                    return;
+                }
+                else if (step==2){
+                    for(var i=4;i<=7;i++){
+                        runPrompt(i);
+                    }
+                    if (selectedStep==-1){
+                        formStep++;
+                        document.getElementById("startButton").innerHTML="Start Step "+formStep;
+                    }
+                    return;
+                }
+                else if (step==3){
+                    for(var i=8;i<=9;i++){
+                        runPrompt(i);
+                    }
+                    if (selectedStep==-1){
+                        formStep++;
+                        document.getElementById("startButton").innerHTML="Start Step "+formStep;
+                    }
+                    
+                    return;
+                }
+                else if (step==4){
+                    for(var i=10;i<13;i++){
+                        runPrompt(i);
+                    }
+                    if (selectedStep==-1){
+                        formStep=1;
+                        document.getElementById("startButton").innerHTML="Start";
+                    }
+                    return;
+                }
+            }
+
+        </script>
+
+    <!-- footer -->
+    <div class="footer">
+        <ul>
+            <li><a href="vethum_editor.html" target="_blank">Vethum's editor page</a></li>
+            <li><a href="ravinda_editor.html" target="_blank">Ravindas's editor page</a></li>
+            <li><a href="manuljee_editor.html" target="_blank">Manuljees's editor page</a></li>
+        </ul>
+    </div>
+    <!-- footer -->
+    </body>
+
+</html>

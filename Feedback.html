@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback form</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/feedback.css">
+    <style>
+        /* Style for message box */
+        .message-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <div class="navbar">
+        <span class="logo"><img src="img/logo.jpg" alt=""></span>
+        <ul class="nav-link">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="Contentmain.html">Content</a></li>
+            <li id="active"><a href="Feedback.html">Feedback</a></li>
+        </ul>  
+    </div>
+    <!-- Nav Bar -->
+
+    <div class="form">
+        <h1>Feedback Form</h1>
+        <p class="p-1"><b>Required fields *</b></p>
+        <p>Enter your name:<input type="text" id="name" placeholder="Enter name here"></p>
+        <p>Enter your email:<input type="email" id="email" placeholder="Enter email here"></p>
+        <p> Was this your first time visiting?</p>
+        <input type="radio" name="first_visit" value="yes">Yes
+        <input type="radio" name="first_visit" value="no">No
+        <p>Was this website informative and easy to navigate through?</p>
+        <input type="radio" name="informative" value="yes">Yes
+        <input type="radio" name="informative" value="no">No
+        <p>If 'No', suggest any improvements for the future:</p>
+        <textarea id="improvements" placeholder="Add your message here"></textarea>
+        <p>How satisfied are you with our services? Choose from 0 to 10, with 1 being "Not satisfied at all!" and 10 being "Extremely satisfied!"</p>
+        <input type="number" id="satisfaction" min="1" max="10">
+        <p>Would you recommend our services?</p>
+        <input type="radio" name="recommend" value="yes">Yes
+        <input type="radio" name="recommend" value="no">No
+        <p>Would you like to receive updates about the website and any offers?</p>
+        <select id="updates">
+            <option value="yes">Yes - via Email</option>
+            <option value="no">No</option>
+        </select>
+        <p>Do you have any additional questions or requests?</p>
+        <textarea id="additional" placeholder="Add your message here"></textarea><br>
+        <button onclick="validateForm()">Submit</button> 
+    </div>
+    <div id="div-2">
+        <p id="d2p"><b>Thank you for your Feedback. Feedback is successfully received.</b></p>
+        <img class="correct" id="correct" src="img/correct.png" alt="correct">
+        <img class="like" id="like" src="./img/like.png" alt="like"> 
+    </div>
+    <!--
+    <div class="div-3">
+        <img>
+        <img>
+        <img>
+    </div>
+    -->
+    <div id="message-box" class="message-box">
+        <p id="message-content"></p>
+    </div>
+    <script src="./js/script.js"></script>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var satisfaction = document.getElementById("satisfaction").value;
+
+            if (name.trim() == "" || email.trim() == "" || satisfaction < 1 || satisfaction > 10) {
+                alert("Please fill in all required fields and ensure satisfaction is between 1 and 10.");
+                return false;
+            }
+
+            // Additional custom validations can be added here
+            
+            // If all validations pass, show success message
+            showMessage("Thank you for your feedback. Feedback is successfully received.");
+            setTimeout(function(){
+                window.location.href = "index.html";
+            }, 3000); // Redirect after 3 seconds 
+        }
+
+        function showMessage(message) {
+            var messageBox = document.getElementById("message-box");
+            var messageContent = document.getElementById("message-content");
+
+            // Set message content
+            messageContent.innerText = message;
+
+            // Show message box
+            messageBox.style.display = "block";
+        }
+    </script>
+<!-- footer -->
+<div class="footer">
+    <ul>
+        <li><a href="vethum_editor.html" target="_blank">Vethum's editor page</a></li>
+        <li><a href="ravinda_editor.html" target="_blank">Ravindas's editor page</a></li>
+        <li><a href="manuljee_editor.html" target="_blank">Manuljees's editor page</a></li>
+    </ul>
+</div>
+<!-- footer -->
+
+</body>
+</html>

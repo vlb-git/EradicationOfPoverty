@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("img/background.jpg");
+        }
+        #tileplan {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; 
+        }
+
+        .product {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product .detail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust background color and opacity */
+            color: #fff;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: opacity 0.3s ease;
+        }
+        #tileplan button{
+            background-color: red;
+            border-radius: 30px;
+        }
+        #cart button{
+            background-color: blue ;
+            border-radius: 15px;
+        }
+        
+
+        .product:hover .detail {
+            display: flex;
+        }
+
+        .product .detail h3,
+        .product .detail p,
+        .product .detail button {
+            margin-bottom: 10px;
+        }
+
+        #cart {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background-color: rgb(160, 95, 11);
+            width: 25%;
+        }
+
+        #cart button {
+            right: 20px;
+            position: fixed;
+        }
+        .product{
+            width: 300px;
+        }
+        #getbuyerinfo{
+        color: rgb(193, 200, 200);
+        display: none;
+        }
+        input{
+        display: flex;
+        flex-direction: column;
+        background-color: #00000018;
+        color: antiquewhite;
+        }
+
+        button:hover{
+        cursor: pointer;
+        }
+       
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <!--Nav Bar-->
+        
+        <div class="navbar">
+            <span class="logo"><img src="img/logo.jpg" alt=""></span>
+            <ul class="nav-link">
+                <li><a href="home.html">Home</a></li>
+                <li id="active"><a href="shop.html">Shop</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="Contentmain.html">Content</a></li>
+                <li><a href="Feedback.html">Feedback</a></li>
+            </ul>  
+        </div>
+
+        <!--Nav Bar-->
+        
+    
+<div style="width: 69%;">
+    <div id="tileplan">
+        <div class="product">
+            <img src="img/cod.jpeg" alt="image of cod">
+            <div class="detail"> 
+                <h3>Call of duty</h3>
+                <p>$20</p>
+                <button onclick="addToCart('Call of duty',20,this)">Add to cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="img/igi.jpeg" alt="image of igi">
+            <div class="detail"> 
+                <h3>IGI</h3>
+                <p>$18</p>
+                <button onclick="addToCart('IGI',18,this)">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="img/unnamed.png" alt="image of need for speed" >
+            <div class="detail"> 
+                <h3>need for speed</h3>
+                <p>$14</p>
+                <button onclick="addToCart('need for speed',14,this)">Add to cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="img/far_cry2.jpg" alt="image of far cry" style="height: 250px;">
+            <div class="detail"> 
+                <h3>Far Cry</h3>
+                <p>$23</p>
+                <button onclick="addToCart('Far Cry',23,this)">Add to cart</button>
+            </div>
+        </div>
+            <div class="product">
+                <img src="img/Assassin'SCreed.jpg" alt="image of Assassin'SCreed" style="height: 250px;">
+                <div class="detail"> 
+                    <h3>Assanssin's Creed</h3>
+                    <p>$20</p>
+                    <button onclick="addToCart('Assanssin s Creed',20,this)">Add to cart</button>
+                </div>
+            </div>
+        
+        <div class="product">
+            <img src="img/gtaa.jpeg" alt="image of gta" style="height: 250px;">
+            <div class="detail"> 
+                <h3>GTA </h3>
+                <p>$25</p>
+                <button onclick="addToCart('GTA',25,this)">Add to cart</button>
+            </div>
+        </div>
+            <div class="product">
+                <img src="img/nero.jpg" alt="nero" style="height: 250px;">
+                <div class="detail"> 
+                    <h3>NERO</h3>
+                    <p>$24</p>
+                    <button onclick="addToCart('NERO',24,this)">Add to cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="img/IGI-3.jpg" alt="IGI" style="height: 250px;">
+                <div class="detail"> 
+                    <h3>IGI</h3>
+                    <p>$15</p>
+                    <button onclick="addToCart('IGI',15,this)">Add to cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="img/gta_san.jpeg" alt="gta san" style="height: 250px;">
+                <div class="detail"> 
+                    <h3>GTA Sanandreas</h3>
+                    <p>$10</p>
+                    <button onclick="addToCart('GTA Sanandreas',10,this)">Add to cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="img/igi1.jpeg" alt="IGI-1" style="height: 250px;">
+                <div class="detail"> 
+                    <h3>IGI-1</h3>
+                    <p>$8</p>
+                    <button onclick="addToCart('IGI-1',8,this)">Add to cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="img/wwe.jpeg" alt="WWE" style="height: 250px;">
+                <div class="detail"> 
+                    <h3>WWE 2019</h3>
+                    <p>$14</p>
+                    <button onclick="addToCart('WWE 2019',20,this)">Add to cart</button>
+                </div>
+            </div>
+        
+
+    </div>
+
+
+    <div id="cart">
+        <h2 style="text-align: center;">Cart </h2>
+        <ul id="cartitems"></ul>
+        <button id="proceed" onclick="viewForm()"><a href="#getbuyerinfo">Checkout</a></button>
+    </div>
+</div>
+
+<script>
+    let total = 0;
+
+    function addToCart(productName, price, button) {
+        var basketItems = document.getElementById('cartitems');
+        var listItem = document.createElement('li');
+        listItem.textContent = productName + ' - $' + price.toFixed(2) + ' ';
+        var removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.classList.add('removeFromCart');
+        
+        total += price;
+        updateTotal(); // Update total when adding item
+        listItem.appendChild(removeButton);
+        basketItems.appendChild(listItem);
+        
+
+        removeButton.addEventListener('click', function() {
+            listItem.remove(); 
+            total -= price;
+            updateTotal(); // Update total when removing item
+            button.disabled = false;
+            button.textContent = 'Add to cart';
+        });
+
+        added(button);
+    }
+
+    function updateTotal() {
+        var totalElem = document.getElementById('total');
+        if (!totalElem) { // If total element doesn't exist, create it
+            totalElem = document.createElement('h3');
+            totalElem.id = 'total';
+            cartitems.appendChild(totalElem);
+        }
+        totalElem.textContent = 'Total $' + total.toFixed(2);
+    }
+
+    function added(button){
+        button.textContent = "added";
+        button.disabled = true;
+    }
+</script>
+<form id="getbuyerinfo">
+    <fieldset>
+        <legend style="font-size: larger;"><b>Payment Details</b></legend>
+        <label for="cardNum">Card number: <span style='color: red;'>*</span></label>
+        <input type="text" name="cardNum" id="cardNum" 
+        required placeholder="xxxx xxxx xxxx xxxx"> 
+        <br>
+        <label for="cardholder">cardholder name: <span style='color: red;'>*</span></label>
+        <input type="text" name="cardholder" id="cardholder" 
+        required placeholder="your name"> 
+        <br>
+        <label for="cardexpdate">Expiry date: <span style='color: red;'>*</span></label>
+        <input type="text" name="cardexpdate" id="cardexpdate" 
+        required placeholder="MM/YY"> 
+        <br>
+        <label for="ccv">ccv: <span style='color: red;'>*</span></label>
+        <input type="text" name="ccv" id="ccv" 
+        required placeholder="3-digit number"> 
+        <br>
+    </fieldset>
+    <fieldset>
+        <legend style="font-size: larger;"><b>contact details</b></legend>
+        <label for="firstname">First Name: <span style='color: red;'>*</span></label>
+        <input type="text" name="firstname" id="firstname" 
+        required placeholder=""> 
+        <br>
+        <label for="Surname">Surname: <span style='color: red;'>*</span></label>
+        <input type="text" name="Surname" id="Surname" 
+        required placeholder=""> 
+        <br>
+        <label for="number">Phone number: <span style='color: red;'>*</span></label>
+        <input type="text" name="number" id="number" 
+        required placeholder=""> 
+        <br>
+        <label for="Email">Email Address: <span style='color: red;'>*</span></label>
+        <input type="text" name="Email" id="Email" 
+        required placeholder=""> 
+        <br>
+    
+    </fieldset>
+    <button type="reset" style="background-color: aqua; border-radius: 10px;">Reset</button>
+<button type="submit" style="background-color: aqua; border-radius: 10px;" onclick="confirmOrder()">Send</button>
+</form>
+
+
+<script>
+    function confirmOrder() {
+        var allFieldsFilled = true;
+        var requiredFields = document.querySelectorAll('[required]');
+
+        requiredFields.forEach(function(field) {
+            if (field.value.trim() === '') {
+                allFieldsFilled = false;
+            }
+        });
+
+        if (allFieldsFilled && total>0) {
+            alert("Your order was placed successfully!");
+        } else {
+            alert("Please fill in all required fields.");
+        }
+    }
+
+    function viewForm(){
+        var formID = document.getElementById('getbuyerinfo');
+        if (total>0){
+            formID.style.display = 'block';
+        }
+        else{
+            alert("Please add some items before checking out");
+        }
+    }
+</script>
+<p style="color: aliceblue;">Contact seller: </p>
+    <a href="mailto:rav@gmail.com" style="color: aliceblue;">Ravinda Jayasinghe </a><br><br>
+    <a href="editor.html" target="_blank">Go to editor's page</a><br><br>
+
+    <!-- footer -->
+    <div class="footer">
+        <ul>
+            <li><a href="vethum_editor.html" target="_blank">Vethum's editor page</a></li>
+            <li><a href="ravinda_editor.html" target="_blank">Ravindas's editor page</a></li>
+            <li><a href="manuljee_editor.html" target="_blank">Manuljees's editor page</a></li>
+        </ul>
+    </div>
+    <!-- footer -->
+</body>
+
+</html>
