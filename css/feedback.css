@@ -1,5 +1,5 @@
 body{
-    background:conic-gradient(red,green,blue,#2f2f,brown);
+    background:conic-gradient(red,blue,rgb(6, 248, 6),brown);
 }
 .form{
     background-color:rgb(237, 226, 226) ;
